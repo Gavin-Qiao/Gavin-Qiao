@@ -59,6 +59,43 @@ svg {
   overflow: hidden;
 }
 
+/* Language toggle — screen-only chrome, never printed */
+.lang-toggle {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  z-index: 50;
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--small-shadow);
+  backdrop-filter: blur(8px);
+}
+
+.lang-toggle a {
+  display: block;
+  padding: 4px 12px;
+  color: var(--muted);
+  font-size: 8pt;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  transition: color 120ms ease, background 120ms ease;
+}
+
+.lang-toggle a:hover {
+  color: var(--ink);
+}
+
+.lang-toggle a[aria-current="true"] {
+  color: var(--paper);
+  background: var(--accent);
+}
+
 .cv {
   display: grid;
   gap: 18px;
@@ -781,6 +818,10 @@ time {
   @page {
     size: Letter;
     margin: 0;
+  }
+
+  .lang-toggle {
+    display: none;
   }
 
   html,
