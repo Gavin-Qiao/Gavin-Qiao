@@ -2,12 +2,13 @@
 
 # mohan-cv
 
-**Print-perfect CV as code. One stylesheet, plain content files, any language.**
+**Print-perfect CV as code. Typed content files, one stylesheet, any language.**
 
-A multi-page curriculum vitae built in HTML and CSS with a small dependency-free renderer — no framework, no build step, no server required. Content lives in per-language data files that anyone can find and edit; the page assembles itself, offers a language toggle on screen, and prints pixel-identical, toggle-free PDFs.
+A multi-page curriculum vitae rendered from TypeScript content files — no framework, no runtime dependencies. Each language is one findable, editable file checked against a typed schema; the page assembles itself, offers a language toggle on screen, and prints pixel-identical, toggle-free PDFs. The committed bundle keeps the page working from `file://` with zero install.
 
-[![HTML](https://img.shields.io/badge/HTML-semantic-1a1a1a?style=flat-square)](#)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-1a1a1a?style=flat-square)](#)
 [![CSS](https://img.shields.io/badge/CSS-print--grade-476173?style=flat-square)](#)
+[![CI](https://github.com/Gavin-Qiao/mohan-cv/actions/workflows/ci.yml/badge.svg)](https://github.com/Gavin-Qiao/mohan-cv/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-912338?style=flat-square)](#license)
 [![Commits: Conventional](https://img.shields.io/badge/commits-conventional-66707a?style=flat-square)](https://www.conventionalcommits.org)
 
@@ -27,24 +28,26 @@ A CV maintained as a document drifts: formats fork, exports go stale, and every 
 
 ## Features
 
-- **Content as data, one file per language.** Your CV lives in `content/master.en.js`, `content/master.fr.js`, and so on — plain, commented JavaScript objects that tolerate trailing commas and multiline strings, and load from `file://` with no server and no CORS ceremony (the reason they are not JSON).
+- **Content as typed data, one file per language.** Your CV lives in `content/master.en.ts`, `content/master.fr.ts`, and so on — commented TypeScript objects validated against the schema in `src/types.ts`. A typo in a section type or a missing field fails `bun run check` instead of rendering wrong.
 - **Automatic language toggle.** The renderer discovers every registered language and builds a floating EN / FR / … switch by itself. It is screen-only chrome: `@media print` removes it, so PDFs never show it.
 - **True page model.** Each page is a fixed US-Letter (8.5 × 11 in) canvas with a sidebar and content column. What you see in the browser is exactly what prints.
 - **Design tokens.** Colors, accents, shadows, and page geometry live in CSS custom properties at the top of `styles.css`. Rebrand the entire document by editing one block.
 - **Print discipline built in.** `@media print` rules emit clean Letter pages with exact colors; links survive as clickable PDF annotations.
-- **No build, no dependencies.** One vanilla-JS renderer (`renderer.js`), readable top to bottom. Open `index.html` directly, or serve the folder with the included single-file Bun server.
+- **Zero runtime dependencies, zero-install viewing.** The committed `dist/cv.js` bundle means `index.html` opens straight from `file://`. The dev server bundles on the fly, so during editing you just save and refresh. CI typechecks, rebuilds, and fails if the committed bundle is stale.
 
 ## Quick start
 
 ```sh
 git clone https://github.com/Gavin-Qiao/mohan-cv.git
 cd mohan-cv
+bun install            # one-time, for type definitions
 
-# Preview — any static server works; a Bun one is included
-bun server.js          # http://localhost:4173
+bun run dev            # http://localhost:4173 — live bundle, save and refresh
+bun run check          # typecheck content and source
+bun run build          # refresh dist/cv.js for file:// and publishing
 ```
 
-Then open `content/master.en.js` and make it yours — every word of the document lives there.
+Then open `content/master.en.ts` and make it yours — every word of the document lives there. No Bun, no problem for readers: the committed bundle means the page also opens by double-clicking `index.html`.
 
 ## Export to PDF
 
@@ -67,20 +70,24 @@ Repeat for `cv-contract.html` and `cv-postgrad.html`. Or simply print from the b
 
 | Path | Purpose |
 |---|---|
-| `content/master.en.js` | English content — edit your CV here |
-| `content/master.fr.js` | French content — same shape, French words |
-| `index.html` | Thin shell: stylesheet, content scripts, renderer |
-| `renderer.js` | Dependency-free renderer: pages, sections, language toggle |
+| `content/master.en.ts` | English content — edit your CV here |
+| `content/master.fr.ts` | French content — same shape, French words |
+| `src/types.ts` | The content schema every language file is checked against |
+| `src/renderer.ts` | Renderer: pages, sections, language toggle |
+| `src/main.ts` | Entry point — register languages here |
+| `dist/cv.js` | Committed bundle so the page opens with zero install |
+| `index.html` | Thin shell: stylesheet, root element, bundle |
 | `styles.css` | Design tokens, page model, all components |
 | `cv-contract.html` | Static one-page variant for contract and fractional work |
 | `cv-postgrad.html` | Static one-page variant for research and industry roles |
 | `assets/` | Sidebar motif and affiliation marks |
-| `server.js` | Optional zero-dependency Bun preview server |
+| `server.ts` | Dev server — serves the folder, bundles on the fly |
+| `.github/workflows/ci.yml` | Typecheck, build, and bundle-freshness gate |
 | `docs/` | Rendered previews used by this README |
 
 ## Make it yours
 
-**1. Replace the content.** Everything — name, summary, cards, section order, pagination — lives in `content/master.en.js` as one commented object. Sections are typed (`projects`, `timeline`, `experience`, `honors`, `publications`, `focus`, `skills`); add, remove, and reorder items freely. Values accept inline HTML for links and emphasis.
+**1. Replace the content.** Everything — name, summary, cards, section order, pagination — lives in `content/master.en.ts` as one commented, schema-checked object. Sections are a typed union (`projects`, `timeline`, `experience`, `honors`, `publications`, `focus`, `skills`); add, remove, and reorder items freely, and let `bun run check` catch structural mistakes. Values accept inline HTML for links and emphasis.
 
 **2. Retheme with tokens.** Everything visual hangs off the custom properties in `:root`:
 
@@ -101,13 +108,16 @@ Repeat for `cv-contract.html` and `cv-postgrad.html`. Or simply print from the b
 
 Languages are just content files; the renderer and toggle adapt to whatever is registered.
 
-1. Copy `content/master.en.js` to `content/master.de.js` (or any [ISO 639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)).
-2. Change the registration key and metadata at the top — `window.CV_CONTENT["de"]`, `label: "DE"`, `htmlLang: "de"` — and translate the values.
-3. Add one line to `index.html`:
+1. Copy `content/master.en.ts` to `content/master.de.ts` (or any [ISO 639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)), translate the values, and update `label` and `htmlLang`.
+2. Register it in `src/main.ts`:
 
-```html
-<script src="./content/master.de.js"></script>
+```ts
+import de from "../content/master.de";
+
+renderCV({ en, fr, de });
 ```
+
+3. `bun run dev` shows it immediately; `bun run build` bakes it into the committed bundle.
 
 The toggle now offers DE automatically. Visitors get their browser's language by default when it is available, their explicit choice is remembered, and `?lang=de` forces an edition — which is also how you export each PDF. Translations usually run longer than the original, so re-check every page against the fixed-page budget after translating.
 
