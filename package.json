@@ -1,0 +1,8 @@
+{
+  "name": "mohan-cv-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun server.js"
+  }
+}
