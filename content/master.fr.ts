@@ -1,16 +1,16 @@
-/*
+/**
  * Contenu français du CV principal.
  *
  * Ce fichier est l'unique endroit où modifier le document français :
  * textes, cartes, ordre et pagination. Les valeurs acceptent du HTML
- * en ligne (liens, <strong>, &nbsp;). Les pages sont à hauteur fixe —
- * après toute modification, exportez le PDF et vérifiez que rien ne
- * déborde d'une page.
+ * en ligne (liens, <strong>, &nbsp;, entités). Les pages sont à
+ * hauteur fixe : après toute modification, exportez le PDF et
+ * vérifiez que rien ne déborde.
  */
 
-window.CV_CONTENT = window.CV_CONTENT || {};
+import type { CVDocument } from "../src/types";
 
-window.CV_CONTENT["fr"] = {
+const fr: CVDocument = {
   label: "FR",
   htmlLang: "fr",
   title: "CV de Mohan Qiao",
@@ -261,3 +261,5 @@ window.CV_CONTENT["fr"] = {
     }
   ]
 };
+
+export default fr;

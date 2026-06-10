@@ -1,19 +1,18 @@
-/*
+/**
  * English content for the master CV.
  *
  * This file is the single place to edit the English document: text,
  * cards, ordering, and pagination all live here. Values may contain
- * inline HTML (links, <strong>, &nbsp;). Page budgets are fixed —
- * after editing, export the PDF and check nothing fell off a page.
+ * inline HTML (links, <strong>, &nbsp;, entities). Pages are fixed
+ * height: after editing, export the PDF and check nothing fell off.
  *
- * To add another language: copy this file to master.<code>.js,
- * translate the values, register it under the matching key, and add
- * one <script> tag in index.html. The toggle updates by itself.
+ * To add another language, copy this file to master.<code>.ts,
+ * translate the values, and register it in src/main.ts.
  */
 
-window.CV_CONTENT = window.CV_CONTENT || {};
+import type { CVDocument } from "../src/types";
 
-window.CV_CONTENT["en"] = {
+const en: CVDocument = {
   label: "EN",
   htmlLang: "en",
   title: "Mohan Qiao CV",
@@ -264,3 +263,5 @@ window.CV_CONTENT["en"] = {
     }
   ]
 };
+
+export default en;

@@ -8,17 +8,16 @@
   </head>
   <body>
     <!--
-      The document is rendered from per-language content files.
-      Edit your CV in content/master.<lang>.js — one file per language.
-      To add a language: copy a content file, translate it, and add a
-      <script> tag below. The language toggle updates automatically
-      and is hidden in print, so exported PDFs stay clean.
-      Force a language for export or sharing with ?lang=en / ?lang=fr.
+      The document renders from typed per-language content files:
+      edit your CV in content/master.<lang>.ts — one file per language,
+      registered in src/main.ts. dist/cv.js is the committed bundle
+      (`bun run build`), so this page also works from file:// with no
+      install; `bun server.ts` serves a live bundle during editing.
+      The language toggle is generated automatically and hidden in
+      print. Force an edition with ?lang=en / ?lang=fr.
     -->
     <main class="cv" id="cv-root" aria-label="Curriculum vitae"></main>
 
-    <script src="./content/master.en.js"></script>
-    <script src="./content/master.fr.js"></script>
-    <script src="./renderer.js"></script>
+    <script src="./dist/cv.js"></script>
   </body>
 </html>
