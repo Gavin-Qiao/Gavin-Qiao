@@ -2,9 +2,9 @@
 
 # mohan-cv
 
-**Print-perfect CV as code. One stylesheet, three documents.**
+**Print-perfect CV as code. One stylesheet, plain content files, any language.**
 
-A multi-page curriculum vitae built in pure HTML and CSS — no framework, no build step, no JavaScript at runtime. The same source renders pixel-identically in the browser and in PDF, and a single design-token sheet drives a full master CV plus tailored one-page variants.
+A multi-page curriculum vitae built in HTML and CSS with a small dependency-free renderer — no framework, no build step, no server required. Content lives in per-language data files that anyone can find and edit; the page assembles itself, offers a language toggle on screen, and prints pixel-identical, toggle-free PDFs.
 
 [![HTML](https://img.shields.io/badge/HTML-semantic-1a1a1a?style=flat-square)](#)
 [![CSS](https://img.shields.io/badge/CSS-print--grade-476173?style=flat-square)](#)
@@ -27,11 +27,12 @@ A CV maintained as a document drifts: formats fork, exports go stale, and every 
 
 ## Features
 
+- **Content as data, one file per language.** Your CV lives in `content/master.en.js`, `content/master.fr.js`, and so on — plain, commented JavaScript objects that tolerate trailing commas and multiline strings, and load from `file://` with no server and no CORS ceremony (the reason they are not JSON).
+- **Automatic language toggle.** The renderer discovers every registered language and builds a floating EN / FR / … switch by itself. It is screen-only chrome: `@media print` removes it, so PDFs never show it.
 - **True page model.** Each page is a fixed US-Letter (8.5 × 11 in) canvas with a sidebar and content column. What you see in the browser is exactly what prints.
-- **One stylesheet, many documents.** The master CV and both one-page variants share `styles.css`. A variant is just another HTML file reusing the same classes.
 - **Design tokens.** Colors, accents, shadows, and page geometry live in CSS custom properties at the top of `styles.css`. Rebrand the entire document by editing one block.
 - **Print discipline built in.** `@media print` rules emit clean Letter pages with exact colors; links survive as clickable PDF annotations.
-- **Zero dependencies.** Open `index.html` directly, or serve the folder with the included single-file Bun server. Nothing to install, nothing to compile.
+- **No build, no dependencies.** One vanilla-JS renderer (`renderer.js`), readable top to bottom. Open `index.html` directly, or serve the folder with the included single-file Bun server.
 
 ## Quick start
 
@@ -43,41 +44,43 @@ cd mohan-cv
 bun server.js          # http://localhost:4173
 ```
 
-Edit `index.html` (and keep `content/mohan-cv.md` in sync — it is the plain-text source of truth for the same content), then export.
+Then open `content/master.en.js` and make it yours — every word of the document lives there.
 
 ## Export to PDF
 
-Any Chromium browser produces a faithful PDF. Headless, from the command line:
+Any Chromium browser produces a faithful PDF; the `?lang=` parameter selects the edition. Headless, from the command line:
 
 ```sh
 # Windows (Edge)
 & "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" `
   --headless --disable-gpu --no-pdf-header-footer `
-  --print-to-pdf="cv-master.pdf" "file:///C:/path/to/mohan-cv/index.html"
+  --print-to-pdf="cv-master-en.pdf" "file:///C:/path/to/mohan-cv/index.html?lang=en"
 
 # macOS / Linux (Chrome)
 google-chrome --headless --disable-gpu --no-pdf-header-footer \
-  --print-to-pdf="cv-master.pdf" "file:///path/to/mohan-cv/index.html"
+  --print-to-pdf="cv-master-fr.pdf" "file:///path/to/mohan-cv/index.html?lang=fr"
 ```
 
-Repeat for `cv-contract.html` and `cv-postgrad.html`. Or simply print from the browser with margins set to None.
+Repeat for `cv-contract.html` and `cv-postgrad.html`. Or simply print from the browser with margins set to None — the language toggle never appears in print.
 
 ## Structure
 
 | Path | Purpose |
 |---|---|
-| `index.html` | Master CV — three fixed pages, full history |
-| `cv-contract.html` | One-page variant for contract and fractional work |
-| `cv-postgrad.html` | One-page variant for research and industry roles |
+| `content/master.en.js` | English content — edit your CV here |
+| `content/master.fr.js` | French content — same shape, French words |
+| `index.html` | Thin shell: stylesheet, content scripts, renderer |
+| `renderer.js` | Dependency-free renderer: pages, sections, language toggle |
 | `styles.css` | Design tokens, page model, all components |
-| `content/mohan-cv.md` | Content source of truth, mirrored by the HTML |
+| `cv-contract.html` | Static one-page variant for contract and fractional work |
+| `cv-postgrad.html` | Static one-page variant for research and industry roles |
 | `assets/` | Sidebar motif and affiliation marks |
 | `server.js` | Optional zero-dependency Bun preview server |
 | `docs/` | Rendered previews used by this README |
 
 ## Make it yours
 
-**1. Replace the content.** Contact cards, summary, and section cards are plain semantic HTML in each document. Update `content/mohan-cv.md` alongside it so the text source stays authoritative.
+**1. Replace the content.** Everything — name, summary, cards, section order, pagination — lives in `content/master.en.js` as one commented object. Sections are typed (`projects`, `timeline`, `experience`, `honors`, `publications`, `focus`, `skills`); add, remove, and reorder items freely. Values accept inline HTML for links and emphasis.
 
 **2. Retheme with tokens.** Everything visual hangs off the custom properties in `:root`:
 
@@ -93,6 +96,20 @@ Repeat for `cv-contract.html` and `cv-postgrad.html`. Or simply print from the b
 **4. Respect the page budget.** Pages are fixed-height with `overflow: hidden`, which keeps print honest but clips silently. After any content change, export the PDF and check the bottom of each page; if a section disappeared, trim a card or move a block to the sidebar. Treat it like a failing test.
 
 **5. Derive a variant.** Copy one `<article class="page">` into a new file, keep the stylesheet link, retitle the hero, and curate cards for one audience. A variant should answer one reader, on one page.
+
+## Add a language
+
+Languages are just content files; the renderer and toggle adapt to whatever is registered.
+
+1. Copy `content/master.en.js` to `content/master.de.js` (or any [ISO 639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)).
+2. Change the registration key and metadata at the top — `window.CV_CONTENT["de"]`, `label: "DE"`, `htmlLang: "de"` — and translate the values.
+3. Add one line to `index.html`:
+
+```html
+<script src="./content/master.de.js"></script>
+```
+
+The toggle now offers DE automatically. Visitors get their browser's language by default when it is available, their explicit choice is remembered, and `?lang=de` forces an edition — which is also how you export each PDF. Translations usually run longer than the original, so re-check every page against the fixed-page budget after translating.
 
 ## Commit convention
 
