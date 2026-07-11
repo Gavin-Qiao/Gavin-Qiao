@@ -1,6 +1,9 @@
 # Generated exports — rebuild with the headless command in the README
 *.pdf
 
+# Local job application materials (CVs, prep notes, outreach)
+applications/
+
 # Local backups and design scratch
 backup_*/
 mohan-cv-design_*.png

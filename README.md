@@ -1,140 +1,183 @@
+<!--
+  GitHub profile README for Gavin-Qiao (Mohan Qiao).
+  French edition: README.fr.md
+
+  Motion kit — Neo-Plasticism / De Stijl:
+  - neo-01-grid.gif — slow mechanical grid + name in white plane
+  - neo-01-footer.gif — matching composition (no type)
+  - readme-typing-svg, ghchart (Mondrian red)
+  Motto (Clifford) once under the header only.
+-->
+
+<div align="center">
+  <img
+    src="./assets/banners/neo-01-grid.gif"
+    alt="Mohan Qiao — Neo-Plasticism banner"
+    width="100%"
+  />
+</div>
+
+<!-- Typing roles: black on white, geometric sans -->
+<p align="center">
+  <img
+    src="https://readme-typing-svg.demolab.com?font=IBM+Plex+Sans&weight=600&size=22&duration=3200&pause=900&color=000000&center=true&vCenter=true&multiline=false&width=640&height=36&lines=AI+%26+LLM-agent+engineer;PhD+%40+Concordia+University;Founder+%40+Telotia;IT+Director+%40+SDPS"
+    alt="Roles: AI & LLM-agent engineer · PhD @ Concordia · Founder @ Telotia · IT Director @ SDPS"
+  />
+</p>
+
 <div align="center">
 
-# mohan-cv
+**EN** · [**FR**](./README.fr.md)
 
-**Print-perfect CV as code. Typed content files, one stylesheet, any language.**
+**Trustworthy & governed multi-agent systems**
 
-A multi-page curriculum vitae rendered from TypeScript content files — no framework, no runtime dependencies. Each language is one findable, editable file checked against a typed schema; the page assembles itself, offers a language toggle on screen, and prints pixel-identical, toggle-free PDFs. The committed bundle keeps the page working from `file://` with zero install.
+PhD candidate · Information & Systems Engineering · Concordia University  
+Founder, [Telotia](https://telotia.com) · Montréal · bilingual EN / FR
 
-[![TypeScript](https://img.shields.io/badge/TypeScript-strict-1a1a1a?style=flat-square)](#)
-[![CSS](https://img.shields.io/badge/CSS-print--grade-476173?style=flat-square)](#)
-[![CI](https://github.com/Gavin-Qiao/mohan-cv/actions/workflows/ci.yml/badge.svg)](https://github.com/Gavin-Qiao/mohan-cv/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-912338?style=flat-square)](#license)
-[![Commits: Conventional](https://img.shields.io/badge/commits-conventional-66707a?style=flat-square)](https://www.conventionalcommits.org)
+[![Website](https://img.shields.io/badge/telotia.com-000000?style=flat-square&logo=safari&logoColor=white)](https://telotia.com)
+[![SDPS](https://img.shields.io/badge/sdpsnet.org-0055A4?style=flat-square&logo=cloudflare&logoColor=white)](https://sdpsnet.org)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-E30613?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/mohan-qiao)
+[![Email](https://img.shields.io/badge/mohan.qiao@mail.concordia.ca-000000?style=flat-square&logo=gmail&logoColor=FFCC00)](mailto:mohan.qiao@mail.concordia.ca)
+[![GitHub](https://img.shields.io/badge/Gavin--Qiao-000000?style=flat-square&logo=github&logoColor=white)](https://github.com/Gavin-Qiao)
 
-<br>
+<br/>
 
-| Master (3 pages) | Contract one-pager | Research one-pager |
-|:---:|:---:|:---:|
-| ![Master CV preview](docs/preview-master-1.png) | ![Contract variant preview](docs/preview-contract-1.png) | ![Post-grad variant preview](docs/preview-postgrad-1.png) |
+> *It is wrong always, everywhere, and for anyone, to believe anything upon insufficient evidence.*  
+> — W. K. Clifford, *The Ethics of Belief* (1877)
+
+I build systems that treat claims as claims until the evidence says otherwise.
 
 </div>
 
 ---
 
-## Why CV as code
+## Featured build — [sdpsnet.org](https://sdpsnet.org)
 
-A CV maintained as a document drifts: formats fork, exports go stale, and every tailored version becomes a divergent copy. Treating the CV as a small codebase fixes all three — content is versioned and diffable, variants share one stylesheet instead of forking it, and the PDF is a reproducible build artifact rather than a hand-exported snapshot.
+Primary builder of the Society for Design and Process Science web platform — product, stack, data recovery, shipping, and day-to-day operations.
 
-## Features
+| | |
+| --- | --- |
+| **Society site** | [sdpsnet.org](https://sdpsnet.org) — membership, journal, history, leadership |
+| **Conference** | [2026.sdpsnet.org](https://2026.sdpsnet.org) — SDPS 2026 · Leuven · 23–26 Aug 2026 |
+| **Stack** | Astro · TypeScript · Cloudflare (Workers / D1 / R2) · payments · transactional email |
+| **Scope** | Registration, paper submission, billing, release gating, automated tests |
 
-- **Content as typed data, one file per language.** Your CV lives in `content/master.en.ts`, `content/master.fr.ts`, and so on — commented TypeScript objects validated against the schema in `src/types.ts`. A typo in a section type or a missing field fails `bun run check` instead of rendering wrong.
-- **Automatic language toggle.** The renderer discovers every registered language and builds a floating EN / FR / … switch by itself. It is screen-only chrome: `@media print` removes it, so PDFs never show it.
-- **True page model.** Each page is a fixed US-Letter (8.5 × 11 in) canvas with a sidebar and content column. What you see in the browser is exactly what prints.
-- **Design tokens.** Colors, accents, shadows, and page geometry live in CSS custom properties at the top of `styles.css`. Rebrand the entire document by editing one block.
-- **Print discipline built in.** `@media print` rules emit clean Letter pages with exact colors; links survive as clickable PDF annotations.
-- **Zero runtime dependencies, zero-install viewing.** The committed `dist/cv.js` bundle means `index.html` opens straight from `file://`. The dev server bundles on the fly, so during editing you just save and refresh. CI typechecks, rebuilds, and fails if the committed bundle is stale.
+Recovered the society’s data after a serious compromise of the predecessor server, then rebuilt and now operate the live stack — including service billing (Cloudflare, Resend).
 
-## Quick start
+---
 
-```sh
-git clone https://github.com/Gavin-Qiao/mohan-cv.git
-cd mohan-cv
-bun install            # one-time, for type definitions
+## What I work on
 
-bun run dev            # http://localhost:4173 — live bundle, save and refresh
-bun run check          # typecheck content and source
-bun run build          # refresh dist/cv.js for file:// and publishing
+I design **governed multi-agent LLM systems**: orchestration, evaluation, guardrails, and audit-grade provenance — from formally verified proof search (Lean 4) to production platforms for regulated workflows.
+
+| Focus | What that means in practice |
+| --- | --- |
+| **Trustworthy agents** | Multi-agent orchestration with explicit roles, failure modes, and closure criteria |
+| **Evidence & assurance** | Source-preserved receipts, monitors, and claim ladders that survive scrutiny |
+| **Human & model evaluation** | Cross-cultural creativity assessment, calibrated scoring, interpretable eval |
+
+Currently: PhD at Concordia, building Telotia (public launch September), and shipping SDPS as above.
+
+---
+
+## Selected work
+
+### Telotia — founder · coming September
+Software for **claim-to-evidence validation**: take a report and a body of evidence you trust, break the report into atomic claims, and for each one return supporting or contradicting evidence — or flag that none exists — with a citation-backed receipt and a graded verdict. It is not a chatbot and does not replace expert sign-off; it makes sure nothing important slipped through before a skeptical reviewer sees the document.
+
+First product: a CAPA / quality-investigation workbench for medical-device quality teams. Public surface opening **September**.  
+→ [telotia.com](https://telotia.com)
+
+### Research highlights
+- **Aviation safety** (Collins Aerospace collab) — knowledge-to-assurance pipeline: authority-tagged artifacts, temporal monitors, falsification traces, RL safety contracts  
+- **Gauging-Ψ** — target-count-free exploratory clustering (recursive MST + adaptive tolerance graphs); 124 labeled datasets  
+- **OECD PISA 2025 creative thinking** — co-lead, PISA Canada English group (UBC collab); PRISM assessment system + LLM scoring of divergent thinking  
+
+---
+
+## Stack I reach for
+
+```text
+AI / agents     Python · Lean 4 · RAG · eval & guardrails · neuro-symbolic · RL
+Languages       TypeScript · Rust · Elixir · SQL · C/C++
+Platforms       Cloudflare (Workers / D1 / R2) · Astro · Bun · FastAPI · Docker
+Methods         Evidence governance · formal verification · experiment design
 ```
 
-Then open `content/master.en.ts` and make it yours — every word of the document lives there. No Bun, no problem for readers: the committed bundle means the page also opens by double-clicking `index.html`.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript"/>
+  <img src="https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white" alt="Rust"/>
+  <img src="https://img.shields.io/badge/Lean_4-000000?style=flat-square&logo=leanpub&logoColor=white" alt="Lean 4"/>
+  <img src="https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white" alt="Cloudflare"/>
+  <img src="https://img.shields.io/badge/Astro-BC52EE?style=flat-square&logo=astro&logoColor=white" alt="Astro"/>
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"/>
+</p>
 
-## Export to PDF
+---
 
-Any Chromium browser produces a faithful PDF; the `?lang=` parameter selects the edition. Headless, from the command line:
+## Elsewhere on this profile
 
-```sh
-# Windows (Edge)
-& "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" `
-  --headless --disable-gpu --no-pdf-header-footer `
-  --print-to-pdf="cv-master-en.pdf" "file:///C:/path/to/mohan-cv/index.html?lang=en"
+| Repo | What it is |
+| --- | --- |
+| [**vserve**](https://github.com/Gavin-Qiao/vserve) | CLI for managing vLLM inference on GPU workstations — download, tune, serve, fan control |
+| [**organon**](https://github.com/Gavin-Qiao/organon) | Research / systems tooling |
+| [**concordia-style**](https://github.com/Gavin-Qiao/concordia-style) | Concordia University design system foundations (React + Tailwind v4) |
 
-# macOS / Linux (Chrome)
-google-chrome --headless --disable-gpu --no-pdf-header-footer \
-  --print-to-pdf="cv-master-fr.pdf" "file:///path/to/mohan-cv/index.html?lang=fr"
-```
+This repository also hosts **CV as code** — typed content files, one print-grade stylesheet, EN/FR editions, reproducible PDF export. Open `index.html` (or `bun run dev`) to view; edit `content/master.en.ts`.
 
-Repeat for `cv-contract.html` and `cv-postgrad.html`. Or simply print from the browser with margins set to None — the language toggle never appears in print.
+---
 
-## Structure
+## Snapshot
 
-| Path | Purpose |
-|---|---|
-| `content/master.en.ts` | English content — edit your CV here |
-| `content/master.fr.ts` | French content — same shape, French words |
-| `src/types.ts` | The content schema every language file is checked against |
-| `src/renderer.ts` | Renderer: pages, sections, language toggle |
-| `src/main.ts` | Entry point — register languages here |
-| `dist/cv.js` | Committed bundle so the page opens with zero install |
-| `index.html` | Thin shell: stylesheet, root element, bundle |
-| `styles.css` | Design tokens, page model, all components |
-| `cv-contract.html` | Static one-page variant for contract and fractional work |
-| `cv-postgrad.html` | Static one-page variant for research and industry roles |
-| `assets/` | Sidebar motif and affiliation marks |
-| `server.ts` | Dev server — serves the folder, bundles on the fly |
-| `.github/workflows/ci.yml` | Typecheck, build, and bundle-freshness gate |
-| `docs/` | Rendered previews used by this README |
+<div align="center">
 
-## Make it yours
+<a href="https://github.com/Gavin-Qiao">
+  <img height="160" src="https://github-readme-stats.vercel.app/api?username=Gavin-Qiao&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&border_radius=0&title_color=000000&icon_color=E30613&text_color=000000&bg_color=ffffff&ring_color=0055A4" alt="GitHub stats"/>
+</a>
+<a href="https://github.com/Gavin-Qiao">
+  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Gavin-Qiao&layout=compact&hide_border=true&border_radius=0&title_color=000000&text_color=000000&bg_color=ffffff&langs_count=6" alt="Top languages"/>
+</a>
 
-**1. Replace the content.** Everything — name, summary, cards, section order, pagination — lives in `content/master.en.ts` as one commented, schema-checked object. Sections are a typed union (`projects`, `timeline`, `experience`, `honors`, `publications`, `focus`, `skills`); add, remove, and reorder items freely, and let `bun run check` catch structural mistakes. Values accept inline HTML for links and emphasis.
+<br/>
 
-**2. Retheme with tokens.** Everything visual hangs off the custom properties in `:root`:
+<img src="https://streak-stats.demolab.com/?user=Gavin-Qiao&theme=default&hide_border=true&border_radius=0&background=FFFFFF&ring=E30613&fire=E30613&currStreakLabel=000000&sideLabels=000000&dates=0055A4&sideNums=000000&currStreakNum=E30613" alt="GitHub streak" height="150"/>
 
-| Token | Role |
-|---|---|
-| `--brand` | Accent for emphasis marks and the sidebar quote |
-| `--accent` / `--accent-soft` | Section indexes, labels, timeline accents |
-| `--paper` / `--ink` / `--ink-soft` / `--muted` | Surface and three text strengths |
-| `--page-width` / `--page-height` | Page geometry (swap in `210mm`/`297mm` for A4) |
+<br/><br/>
 
-**3. Replace personal assets.** The affiliation mark and sidebar motif under `assets/` are personal to this instance. Substitute your own — institutional logos are trademarks of their owners and are not covered by this repository's license.
+<!-- Contribution calendar — Mondrian red cells on the GitHub grid -->
+<img src="https://ghchart.rshah.org/E30613/Gavin-Qiao" alt="Contribution calendar" width="100%"/>
 
-**4. Respect the page budget.** Pages are fixed-height with `overflow: hidden`, which keeps print honest but clips silently. After any content change, export the PDF and check the bottom of each page; if a section disappeared, trim a card or move a block to the sidebar. Treat it like a failing test.
+</div>
 
-**5. Derive a variant.** Copy one `<article class="page">` into a new file, keep the stylesheet link, retitle the hero, and curate cards for one audience. A variant should answer one reader, on one page.
+---
 
-## Add a language
+## Background
 
-Languages are just content files; the renderer and toggle adapt to whatever is registered.
+| | |
+| --- | --- |
+| **Ph.D.** Information & Systems Engineering | Concordia University · 2024– · 4.30/4.30 · accelerated |
+| **M.A.Sc.** Quality Systems Engineering | Concordia University · 2023–2024 · Merit Scholarship |
+| **B.Sc.** Mathematics & Computer Science | McGill University · joint major · 2019–2022 |
+| **Service** | IT Director, Society of Design and Process Science (SDPS) — [sdpsnet.org](https://sdpsnet.org) |
 
-1. Copy `content/master.en.ts` to `content/master.de.ts` (or any [ISO 639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)), translate the values, and update `label` and `htmlLang`.
-2. Register it in `src/main.ts`:
+Also: teaching assistant (INSE 6411 — Product Design Theory & Methodology), research assistantships in UAV remote sensing and cyber-physical IoT security, and co-authorship on cross-cultural cognitive flexibility work from PISA creative problem-solving (under review).
 
-```ts
-import de from "../content/master.de";
+---
 
-renderCV({ en, fr, de });
-```
+<div align="center">
 
-3. `bun run dev` shows it immediately; `bun run build` bakes it into the committed bundle.
+**Open to collaboration** on agent reliability, evidence-governed AI systems, and research that has to hold up outside the demo.
 
-The toggle now offers DE automatically. Visitors get their browser's language by default when it is available, their explicit choice is remembered, and `?lang=de` forces an edition — which is also how you export each PDF. Translations usually run longer than the original, so re-check every page against the fixed-page budget after translating.
+[Website](https://telotia.com) · [SDPS](https://sdpsnet.org) · [LinkedIn](https://linkedin.com/in/mohan-qiao) · [Email](mailto:mohan.qiao@mail.concordia.ca) · [GitHub](https://github.com/Gavin-Qiao) · [Français](./README.fr.md)
 
-## Commit convention
+</div>
 
-This repository follows [Conventional Commits](https://www.conventionalcommits.org):
-
-| Prefix | Used for |
-|---|---|
-| `feat:` | New documents, sections, or capabilities |
-| `fix:` | Layout, overflow, or content corrections |
-| `docs:` | README and documentation |
-| `style:` | Visual changes with no content change |
-| `chore:` | Tooling, ignores, maintenance |
-
-## License
-
-Code and stylesheet are released under the [MIT License](LICENSE).
-
-The personal content of this instance — name, biography, project descriptions, photographs, and all logos and marks under `assets/` — is **not** licensed for reuse. Replace it with your own before publishing a fork.
+<div align="center">
+  <img
+    src="./assets/banners/neo-01-footer.gif"
+    alt=""
+    width="100%"
+  />
+</div>
