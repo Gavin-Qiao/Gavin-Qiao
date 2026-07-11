@@ -4,8 +4,7 @@
 
   Motion kit — Neo-Plasticism / De Stijl:
   - neo-01-grid.gif — slow mechanical grid + name in white plane
-  - neo-01-footer.gif — matching composition (no type)
-  - readme-typing-svg, ghchart (Mondrian red)
+  - readme-typing-svg (dual-mode), summary cards, ghchart (Mondrian red)
   Motto (Clifford) once under the header only.
 -->
 
@@ -17,12 +16,22 @@
   />
 </div>
 
-<!-- Typing roles: black on white, geometric sans -->
+<!-- Typing roles: dual-mode via prefers-color-scheme (light ink / dark paper) -->
 <p align="center">
-  <img
-    src="https://readme-typing-svg.demolab.com?font=IBM+Plex+Sans&weight=600&size=22&duration=3200&pause=900&color=000000&center=true&vCenter=true&multiline=false&width=640&height=36&lines=AI+%26+LLM-agent+engineer;PhD+%40+Concordia+University;Founder+%40+Telotia;IT+Director+%40+SDPS"
-    alt="Roles: AI & LLM-agent engineer · PhD @ Concordia · Founder @ Telotia · IT Director @ SDPS"
-  />
+  <picture>
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="https://readme-typing-svg.demolab.com?font=IBM+Plex+Sans&weight=600&size=22&duration=3200&pause=900&color=E6EDF3&center=true&vCenter=true&multiline=false&width=640&height=36&lines=AI+%26+LLM-agent+engineer;PhD+%40+Concordia+University;Founder+%40+Telotia;IT+Director+%40+SDPS"
+    />
+    <source
+      media="(prefers-color-scheme: light)"
+      srcset="https://readme-typing-svg.demolab.com?font=IBM+Plex+Sans&weight=600&size=22&duration=3200&pause=900&color=1F2328&center=true&vCenter=true&multiline=false&width=640&height=36&lines=AI+%26+LLM-agent+engineer;PhD+%40+Concordia+University;Founder+%40+Telotia;IT+Director+%40+SDPS"
+    />
+    <img
+      src="https://readme-typing-svg.demolab.com?font=IBM+Plex+Sans&weight=600&size=22&duration=3200&pause=900&color=E30613&center=true&vCenter=true&multiline=false&width=640&height=36&lines=AI+%26+LLM-agent+engineer;PhD+%40+Concordia+University;Founder+%40+Telotia;IT+Director+%40+SDPS"
+      alt="Roles: AI & LLM-agent engineer · PhD @ Concordia · Founder @ Telotia · IT Director @ SDPS"
+    />
+  </picture>
 </p>
 
 <div align="center">
@@ -131,22 +140,29 @@ This repository also hosts **CV as code** — typed content files, one print-gra
 
 ## Snapshot
 
+<!-- github-readme-stats.vercel.app is currently DEPLOYMENT_PAUSED; using profile-summary-cards.
+     Dual-mode: light vs dark themes via <picture> + prefers-color-scheme. -->
 <div align="center">
 
-<a href="https://github.com/Gavin-Qiao">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=Gavin-Qiao&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&border_radius=0&title_color=000000&icon_color=E30613&text_color=000000&bg_color=ffffff&ring_color=0055A4" alt="GitHub stats"/>
-</a>
-<a href="https://github.com/Gavin-Qiao">
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Gavin-Qiao&layout=compact&hide_border=true&border_radius=0&title_color=000000&text_color=000000&bg_color=ffffff&langs_count=6" alt="Top languages"/>
-</a>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Gavin-Qiao&theme=github_dark" />
+  <img height="160" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Gavin-Qiao&theme=github" alt="GitHub stats" />
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Gavin-Qiao&theme=github_dark" />
+  <img height="160" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Gavin-Qiao&theme=github" alt="Top languages" />
+</picture>
 
 <br/>
 
-<img src="https://streak-stats.demolab.com/?user=Gavin-Qiao&theme=default&hide_border=true&border_radius=0&background=FFFFFF&ring=E30613&fire=E30613&currStreakLabel=000000&sideLabels=000000&dates=0055A4&sideNums=000000&currStreakNum=E30613" alt="GitHub streak" height="150"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=Gavin-Qiao&theme=dark&hide_border=true&border_radius=0&ring=E30613&fire=E30613&currStreakNum=E30613" />
+  <img height="150" src="https://streak-stats.demolab.com/?user=Gavin-Qiao&theme=default&hide_border=true&border_radius=0&background=FFFFFF&ring=E30613&fire=E30613&currStreakLabel=1F2328&sideLabels=1F2328&dates=0055A4&sideNums=1F2328&currStreakNum=E30613" alt="GitHub streak" />
+</picture>
 
 <br/><br/>
 
-<!-- Contribution calendar — Mondrian red cells on the GitHub grid -->
+<!-- Contribution calendar — Mondrian red (readable on both themes) -->
 <img src="https://ghchart.rshah.org/E30613/Gavin-Qiao" alt="Contribution calendar" width="100%"/>
 
 </div>
@@ -172,12 +188,4 @@ Also: teaching assistant (INSE 6411 — Product Design Theory & Methodology), re
 
 [Website](https://telotia.com) · [SDPS](https://sdpsnet.org) · [LinkedIn](https://linkedin.com/in/mohan-qiao) · [Email](mailto:mohan.qiao@mail.concordia.ca) · [GitHub](https://github.com/Gavin-Qiao) · [Français](./README.fr.md)
 
-</div>
-
-<div align="center">
-  <img
-    src="./assets/banners/neo-01-footer.gif"
-    alt=""
-    width="100%"
-  />
 </div>

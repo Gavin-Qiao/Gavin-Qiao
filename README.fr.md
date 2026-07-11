@@ -12,10 +12,20 @@
 </div>
 
 <p align="center">
-  <img
-    src="https://readme-typing-svg.demolab.com?font=IBM+Plex+Sans&weight=600&size=20&duration=3200&pause=900&color=000000&center=true&vCenter=true&multiline=false&width=700&height=36&lines=Ing%C3%A9nieur+IA+%26+agents+LLM;Doctorant+%40+Universit%C3%A9+Concordia;Fondateur+%40+Telotia;Directeur+TI+%40+SDPS"
-    alt="Rôles : ingénieur IA · doctorant Concordia · fondateur Telotia · directeur TI SDPS"
-  />
+  <picture>
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="https://readme-typing-svg.demolab.com?font=IBM+Plex+Sans&weight=600&size=20&duration=3200&pause=900&color=E6EDF3&center=true&vCenter=true&multiline=false&width=700&height=36&lines=Ing%C3%A9nieur+IA+%26+agents+LLM;Doctorant+%40+Universit%C3%A9+Concordia;Fondateur+%40+Telotia;Directeur+TI+%40+SDPS"
+    />
+    <source
+      media="(prefers-color-scheme: light)"
+      srcset="https://readme-typing-svg.demolab.com?font=IBM+Plex+Sans&weight=600&size=20&duration=3200&pause=900&color=1F2328&center=true&vCenter=true&multiline=false&width=700&height=36&lines=Ing%C3%A9nieur+IA+%26+agents+LLM;Doctorant+%40+Universit%C3%A9+Concordia;Fondateur+%40+Telotia;Directeur+TI+%40+SDPS"
+    />
+    <img
+      src="https://readme-typing-svg.demolab.com?font=IBM+Plex+Sans&weight=600&size=20&duration=3200&pause=900&color=E30613&center=true&vCenter=true&multiline=false&width=700&height=36&lines=Ing%C3%A9nieur+IA+%26+agents+LLM;Doctorant+%40+Universit%C3%A9+Concordia;Fondateur+%40+Telotia;Directeur+TI+%40+SDPS"
+      alt="Rôles : ingénieur IA · doctorant Concordia · fondateur Telotia · directeur TI SDPS"
+    />
+  </picture>
 </p>
 
 <div align="center">
@@ -130,12 +140,4 @@ Aussi : assistant d'enseignement (INSE 6411), stages de recherche (télédétect
 
 [Site](https://telotia.com) · [SDPS](https://sdpsnet.org) · [LinkedIn](https://linkedin.com/in/mohan-qiao) · [Courriel](mailto:mohan.qiao@mail.concordia.ca) · [GitHub](https://github.com/Gavin-Qiao) · [English](./README.md)
 
-</div>
-
-<div align="center">
-  <img
-    src="./assets/banners/neo-01-footer.gif"
-    alt=""
-    width="100%"
-  />
 </div>

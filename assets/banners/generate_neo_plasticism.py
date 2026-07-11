@@ -221,46 +221,41 @@ def frame_banner(t: float) -> Image.Image:
 
 
 def frame_footer(t: float) -> Image.Image:
-    """Same structure, scaled; empty fixed center (no type)."""
+    """
+    Continuous Mondrian strip — no empty center cell.
+    Three full-width bands; vertical splits slide mechanically.
+    """
     img = Image.new("RGB", (FW, FH), WHITE)
     d = ImageDraw.Draw(img)
     lw = 10
-    x0, x1 = 400, 800
-    y0, y1 = 28, 68
+    # Three equal bands
+    y0, y1 = FH // 3, 2 * FH // 3
 
-    top_split = int(lerp(220, 900, t))
-    bot_split = int(lerp(900, 220, t))
-    left_split = int(lerp(y0 + 6, y1 - 6, t))
-    right_split = int(lerp(y1 - 6, y0 + 6, t))
-    br_accent = int(lerp(80, 200, t))
+    # Vertical splits (phase-offset) — full-band color pairs
+    top_split = int(lerp(200, 900, t))
+    mid_split = int(lerp(850, 250, t))
+    bot_split = int(lerp(350, 800, t))
+    # Bottom-right yellow accent width
+    accent = int(lerp(90, 240, t))
 
-    def vbar(x, ya, yb):
-        d.rectangle([x - lw // 2, ya, x + lw // 2, yb], fill=BLACK)
+    # Top band: yellow | red
+    fill_h_split(d, 0, 0, FW, y0, top_split, YELLOW, RED)
+    # Mid band: blue | white
+    fill_h_split(d, 0, y0, FW, y1, mid_split, BLUE, WHITE)
+    # Bottom band: white | blue, with yellow bite on the right
+    fill_h_split(d, 0, y1, FW, FH, bot_split, WHITE, BLUE)
+    d.rectangle([FW - accent, y1, FW, FH], fill=YELLOW)
 
-    def hbar(y, xa, xb):
-        d.rectangle([xa, y - lw // 2, xb, y + lw // 2], fill=BLACK)
+    # Horizontal black bars (static structure)
+    d.rectangle([0, y0 - lw // 2, FW, y0 + lw // 2], fill=BLACK)
+    d.rectangle([0, y1 - lw // 2, FW, y1 + lw // 2], fill=BLACK)
+    # Moving vertical splitters (per band only)
+    d.rectangle([top_split - lw // 2, 0, top_split + lw // 2, y0], fill=BLACK)
+    d.rectangle([mid_split - lw // 2, y0, mid_split + lw // 2, y1], fill=BLACK)
+    d.rectangle([bot_split - lw // 2, y1, bot_split + lw // 2, FH], fill=BLACK)
+    # Accent edge
+    d.rectangle([FW - accent - lw // 2, y1, FW - accent + lw // 2, FH], fill=BLACK)
 
-    fill_h_split(d, 0, 0, x0, y0, top_split, YELLOW, RED)
-    fill_h_split(d, x0, 0, x1, y0, top_split, YELLOW, RED)
-    fill_h_split(d, x1, 0, FW, y0, top_split, YELLOW, RED)
-    fill_v_split(d, 0, y0, x0, y1, left_split, WHITE, BLUE)
-    fill_v_split(d, x1, y0, FW, y1, right_split, RED, YELLOW)
-    fill_h_split(d, 0, y1, x0, FH, bot_split, BLUE, WHITE)
-    fill_h_split(d, x0, y1, x1, FH, bot_split, BLUE, WHITE)
-    fill_h_split(d, x1, y1, FW, FH, bot_split, BLUE, WHITE)
-    d.rectangle([FW - br_accent, y1, FW, FH], fill=YELLOW)
-
-    vbar(top_split, 0, y0)
-    vbar(bot_split, y1, FH)
-    hbar(left_split, 0, x0)
-    hbar(right_split, x1, FW)
-
-    hbar(y0, 0, FW)
-    hbar(y1, 0, FW)
-    vbar(x0, 0, FH)
-    vbar(x1, 0, FH)
-
-    d.rectangle([x0, y0, x1, y1], fill=WHITE)
     d.rectangle([0, 0, FW - 1, FH - 1], outline=BLACK, width=lw)
     return img
 
