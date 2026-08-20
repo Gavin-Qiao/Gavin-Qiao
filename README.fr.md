@@ -93,7 +93,8 @@ Premier produit : un banc de travail CAPA / enquêtes qualité pour les équipes
 
 ### Faits saillants de recherche
 - **Sécurité aéronautique** (collab. Collins Aerospace) — pipeline savoir → assurance : artéfacts étiquetés par autorité, moniteurs temporels, traces de falsification, contrats de sécurité RL  
-- **Gauging-Ψ** — clustering exploratoire sans nombre de classes prédéfini (MST récursif + graphes de tolérance adaptatifs) ; 124 jeux de données étiquetés  
+- **Psi** — découverte de structure à partir de la proximité, sans nombre de groupes fixé. Manuscrit en préparation.
+- **Proximity Atlas** — organise la preuve de proximité au lieu d'imposer une seule partition ; la non-décision reste possible. Manuscrit en préparation.
 - **OCDE PISA 2025 pensée créative** — co-responsable, groupe anglais PISA Canada (collab. UBC) ; système d'évaluation PRISM + notation LLM de la pensée divergente  
 
 ---

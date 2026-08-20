@@ -99,7 +99,8 @@ First product: a CAPA / quality-investigation workbench for medical-device quali
 
 ### Research highlights
 - **Aviation safety** (Collins Aerospace collab) — knowledge-to-assurance pipeline: authority-tagged artifacts, temporal monitors, falsification traces, RL safety contracts  
-- **Gauging-Ψ** — target-count-free exploratory clustering (recursive MST + adaptive tolerance graphs); 124 labeled datasets  
+- **Psi** — unsupervised structure recovery from proximity, without a preset number of groups. Manuscript in preparation.
+- **Proximity Atlas** — organizes proximity evidence instead of forcing a single partition; non-decision stays allowed. Manuscript in preparation.
 - **OECD PISA 2025 creative thinking** — co-lead, PISA Canada English group (UBC collab); PRISM assessment system + LLM scoring of divergent thinking  
 
 ---

@@ -127,10 +127,16 @@ const en: CVDocument = {
               body: "Knowledge-to-assurance pipeline turning aviation documentation, regulations, simulator state, and incident narratives into authority-tagged artifacts, temporal monitors, falsification traces, and RL safety contracts for safety-critical flight scenarios."
             },
             {
-              name: "Gauging-&Psi;",
-              tag: "Target-Count-Free Clustering &middot; with Prof. Yong Zeng",
-              time: "Active &middot; paper WIP",
-              body: "Novel exploratory clustering pipeline requiring no preset cluster count &mdash; global separation via recursive MST pruning, then local refinement through adaptive tolerance-space graphs. Benchmarked on 124 labeled datasets with a stage-by-stage visual audit trail; manuscript in preparation."
+              name: "Psi",
+              tag: "Exploratory Clustering &middot; with Prof. Yong Zeng",
+              time: "Active",
+              body: "Developing proximity-based structure discovery without a preset number of groups. Manuscript in preparation."
+            },
+            {
+              name: "Proximity Atlas",
+              tag: "Proximity Evidence",
+              time: "Active",
+              body: "Developing an atlas of proximity evidence rather than one accepted clustering; non-decision remains allowed. Manuscript in preparation."
             },
             {
               name: "OECD PISA 2025 Creative Thinking",

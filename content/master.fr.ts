@@ -125,10 +125,16 @@ const fr: CVDocument = {
               body: "Cha&icirc;ne du savoir &agrave; l&rsquo;assurance transformant documentation a&eacute;ronautique, r&eacute;glementation, &eacute;tats de simulateur et r&eacute;cits d&rsquo;incidents en artefacts &agrave; autorit&eacute; &eacute;tiquet&eacute;e, moniteurs temporels, traces de falsification et contrats de s&ucirc;ret&eacute; RL pour des sc&eacute;narios de vol critiques."
             },
             {
-              name: "Gauging-&Psi;",
-              tag: "Regroupement sans nombre de classes &middot; avec le Pr Yong Zeng",
-              time: "Actif &middot; article en cours",
-              body: "Pipeline de regroupement exploratoire sans nombre de classes pr&eacute;d&eacute;fini &mdash; s&eacute;paration globale par &eacute;lagage r&eacute;cursif d&rsquo;arbres couvrants, puis raffinement local par graphes d&rsquo;espaces de tol&eacute;rance adaptatifs. &Eacute;valu&eacute; sur 124 jeux de donn&eacute;es &eacute;tiquet&eacute;s avec piste d&rsquo;audit visuelle&nbsp;; manuscrit en pr&eacute;paration."
+              name: "Psi",
+              tag: "Regroupement exploratoire &middot; avec le Pr Yong Zeng",
+              time: "Actif",
+              body: "D&eacute;veloppement d&rsquo;une d&eacute;couverte de structure fond&eacute;e sur la proximit&eacute;, sans nombre de groupes fix&eacute;. Manuscrit en pr&eacute;paration."
+            },
+            {
+              name: "Proximity Atlas",
+              tag: "Preuve de proximit&eacute;",
+              time: "Actif",
+              body: "D&eacute;veloppement d&rsquo;un atlas de preuve de proximit&eacute; plut&ocirc;t qu&rsquo;un seul regroupement accept&eacute;&nbsp;; la non-d&eacute;cision reste possible. Manuscrit en pr&eacute;paration."
             },
             {
               name: "PISA 2025 de l&rsquo;OCDE &mdash; Pens&eacute;e cr&eacute;ative",
