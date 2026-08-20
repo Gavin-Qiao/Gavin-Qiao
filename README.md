@@ -40,7 +40,7 @@
 
 **Trustworthy & governed multi-agent systems**
 
-PhD candidate · Information & Systems Engineering · Concordia University  
+PhD student · Information & Systems Engineering · Concordia University<br>
 Founder, [Telotia](https://telotia.com) · Montréal · bilingual EN / FR
 
 [![Website](https://img.shields.io/badge/telotia.com-000000?style=flat-square&logo=safari&logoColor=white)](https://telotia.com)
@@ -85,23 +85,26 @@ I design **governed multi-agent LLM systems**: orchestration, evaluation, guardr
 | **Evidence & assurance** | Source-preserved receipts, monitors, and claim ladders that survive scrutiny |
 | **Human & model evaluation** | Cross-cultural creativity assessment, calibrated scoring, interpretable eval |
 
-Currently: PhD at Concordia, building Telotia (public launch September), and shipping SDPS as above.
+Currently: PhD at Concordia, developing Telotia as pre-product R&D, and shipping SDPS as above.
 
 ---
 
 ## Selected work
 
-### Telotia — founder · coming September
+### Telotia — pre-product R&D
 Software for **claim-to-evidence validation**: take a report and a body of evidence you trust, break the report into atomic claims, and for each one return supporting or contradicting evidence — or flag that none exists — with a citation-backed receipt and a graded verdict. It is not a chatbot and does not replace expert sign-off; it makes sure nothing important slipped through before a skeptical reviewer sees the document.
 
-First product: a CAPA / quality-investigation workbench for medical-device quality teams. Public surface opening **September**.  
+Lead product hypothesis: a CAPA / quality-investigation workbench for medical-device quality teams.
 → [telotia.com](https://telotia.com)
 
 ### Research highlights
-- **Aviation safety** (Collins Aerospace collab) — knowledge-to-assurance pipeline: authority-tagged artifacts, temporal monitors, falsification traces, RL safety contracts  
+- **Probatio** — matched experiments comparing one fixed open-weight LLM alone and inside an organized proof-search system, with sealed evidence, retained trajectories, and Lean 4 kernel verification
+- **Mensura** — claim-aware pairwise measurement separating evidence acquisition from measurement inversion, with relations, partial orders, identification regions, and abstention
+- **Measure of Tolerance (MoT)** — simultaneous local homogeneity certificates designed to govern downstream actions with explicit loss bounds and fallback
 - **Psi** — unsupervised structure recovery from proximity, without a preset number of groups. Manuscript in preparation.
 - **Proximity Atlas** — organizes proximity evidence instead of forcing a single partition; non-decision stays allowed. Manuscript in preparation.
-- **OECD PISA 2025 creative thinking** — co-lead, PISA Canada English group (UBC collab); PRISM assessment system + LLM scoring of divergent thinking  
+- **Noesis** — public-knowledge-to-autonomy research spanning formal monitors, scripted and learned control, and cross-FDM tests that determine where learning actually transfers
+- **PISA Creative LLM** — research framework comparing LLM and human judgments of PISA 2022 creative-thinking responses through pairwise, holistic, and criteria-based assessment
 
 ---
 
@@ -174,8 +177,8 @@ This repository also hosts **CV as code** — typed content files, one print-gra
 
 | | |
 | --- | --- |
-| **Ph.D.** Information & Systems Engineering | Concordia University · 2024– · 4.30/4.30 · accelerated |
-| **M.A.Sc.** Quality Systems Engineering | Concordia University · 2023–2024 · Merit Scholarship |
+| **Ph.D. student** Information & Systems Engineering | Concordia University · 2024– · 4.30/4.30 · accelerated pathway |
+| **Graduate studies** Quality Systems Engineering | Concordia University · 2023–2024 · transferred to PhD before degree completion · Merit Scholarship |
 | **B.Sc.** Mathematics & Computer Science | McGill University · joint major · 2019–2022 |
 | **Service** | IT Director, Society of Design and Process Science (SDPS) — [sdpsnet.org](https://sdpsnet.org) |
 

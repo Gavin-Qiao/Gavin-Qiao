@@ -18,9 +18,9 @@ const en: CVDocument = {
   title: "Mohan Qiao CV",
   kicker: "Curriculum Vitae",
   name: "Mohan Qiao",
-  subtitle: "AI &amp; LLM-Agent Engineer &middot; Trustworthy &amp; Governed Agent Systems",
+  subtitle: "Machine Learning Researcher &middot; Epistemic Accumulation &middot; Auditable AI Systems",
 
-  summary: "Builder of <strong>trustworthy, governed multi-agent LLM systems</strong> &mdash; orchestration, evaluation, guardrails, and audit-grade provenance, from formally verified proof search (Lean&nbsp;4) to production platforms. PhD candidate (Information &amp; Systems Engineering, Concordia, 2027) and co-founder of <strong>Telotia</strong>. Bilingual EN/FR &middot; Montr&eacute;al.",
+  summary: "PhD researcher studying how fallible human and machine agents can contribute to <strong>cumulative, auditable, and defensible knowledge</strong>. I build controlled research instruments spanning verifier-grounded LLM reasoning, comparative measurement, certified locality, and exploratory clustering. B.Sc. Mathematics &amp; Computer Science (McGill); PhD student at Concordia through an accelerated pathway. Bilingual EN/FR &middot; Montr&eacute;al.",
 
   sidebar: {
     logo: {
@@ -36,12 +36,12 @@ const en: CVDocument = {
     ],
     strengthsTitle: "Core Strengths",
     strengths: [
-      "LLM Agent Orchestration",
-      "Agent Reliability &amp; Evaluation",
-      "Evidence Governance &amp; Assurance",
-      "Full-Stack Engineering",
-      "Neuro-Symbolic AI",
-      "Applied ML &amp; RL"
+      "LLM Agents &amp; External Memory",
+      "Continual Epistemic Accumulation",
+      "Formal Verification (Lean 4)",
+      "Statistical Experiment Design",
+      "Comparative Measurement",
+      "Research Software Engineering"
     ],
     quote: {
       title: "Capability is not warrant",
@@ -56,31 +56,37 @@ const en: CVDocument = {
       sections: [
         {
           type: "projects",
-          title: "Selected Projects &mdash; Agent &amp; Systems",
+          title: "Selected Research Projects",
           items: [
             {
-              name: "Telotia",
-              tag: "Co-Founder",
-              time: "Ongoing",
-              body: "Co-founder building trustworthy, governed AI agents for regulated quality processes (CAPA validation), applying evidence-governance and audit discipline so LLM-agent outputs are admissible in FDA/ISO-regulated workflows."
-            },
-            {
-              name: "Principia",
-              tag: "Evidence-Governance Framework",
-              time: "2026",
-              body: "Authored Principia, a fallibilist evidence-governance framework for coordinating fallible multi-agent LLM systems &mdash; typed context, source-preserved receipts, adversarial review, and governed closure (&ldquo;capability is not warrant&rdquo;). Probatio is its working implementation. Paper in preparation (draft v4.6, 2026)."
-            },
-            {
               name: "Probatio",
-              tag: "Lean-Verified Proof-Search Organization",
-              time: "Active &middot; paper WIP",
-              body: "Research harness measuring what organization adds over a bare model: multi-agent debate, lock-and-recurse decomposition, mechanical proof repair, and accumulated memory drive a small local LLM against Lean&nbsp;4 kernel verification on formalized Erd&#337;s problems (DeepMind AlphaProof Nexus benchmark). Organizational levers alone advanced the Erd&#337;s&nbsp;#125 ladder from 5/19 to 10/19 rungs &mdash; every close cold-verified, axiom-clean &mdash; across 80+ evidence-logged findings on a governed claim ladder."
+              tag: "Epistemic Accumulation &middot; Verifier-Grounded LLM Research",
+              time: "Active",
+              body: "Designed a controlled instrument for measuring the <strong>organization&ndash;generation boundary</strong>: one fixed open-weight model works alone or inside a deterministic research organization under matched evidence and resource budgets. Lean&nbsp;4 provides cold kernel checks; sealed targets, retained trajectories, failed attempts, and narrow claim levels keep correctness distinct from novelty or informal fidelity."
             },
             {
-              name: "SDPS 2026 Platform",
-              tag: "Full-Stack &middot; <a href=\"https://sdpsnet.org\">sdpsnet.org</a>",
-              time: "2025&ndash;Present",
-              body: "Own the SDPS conference platform end-to-end: chose the stack (Astro / TypeScript / Cloudflare D1/R2), recovered the society&rsquo;s data from the predecessor server compromised in a serious cybersecurity attack, and ship + operate registration, paper submission, payments, and transactional email &mdash; including service billing (Cloudflare, Resend) &mdash; with an automated test suite and release gating."
+              name: "Mensura",
+              tag: "Error-Controlled Comparative Measurement",
+              time: "Active",
+              body: "Developing claim-aware comparative measurement through two coupled layers: adaptive evidence acquisition and inversion from completed comparison experiments to task quality or latent structure. Mensura seeks only supportable outputs &mdash; pair relations, partial orders, rank sets, identification regions, decisions, or abstention &mdash; while retaining the complete comparison history."
+            },
+            {
+              name: "Measure of Tolerance (MoT)",
+              tag: "Data-Certified Locality",
+              time: "Active",
+              body: "Developing simultaneous, anytime-valid homogeneity certificates over points and regions, then testing whether downstream decisions can inherit explicit loss bounds and fallback. One bounded application showed safe work avoidance under its fixed contract; another route was rejected when a simpler substitute sufficed. Neither result implies operational time or resource savings."
+            },
+            {
+              name: "Psi",
+              tag: "Exploratory Clustering &middot; with Prof. Yong Zeng",
+              time: "Active",
+              body: "Developing proximity-based structure discovery without a preset number of groups. Manuscript in preparation."
+            },
+            {
+              name: "Proximity Atlas",
+              tag: "Proximity Evidence",
+              time: "Active",
+              body: "Developing an atlas of proximity evidence rather than one accepted clustering; non-decision remains allowed. Manuscript in preparation."
             }
           ]
         },
@@ -89,13 +95,13 @@ const en: CVDocument = {
           title: "Education",
           items: [
             {
-              name: "Ph.D. Information &amp; Systems Engineering",
-              detail: ["Concordia University", "Supervisor: Prof. Yong Zeng", "4.30 / 4.30", "Accelerated to PhD"],
+              name: "Ph.D. Student, Information &amp; Systems Engineering",
+              detail: ["Concordia University", "4.30 / 4.30", "Accelerated pathway from graduate studies"],
               time: "2024&ndash;Present"
             },
             {
-              name: "M.A.Sc. Quality Systems Engineering",
-              detail: ["Concordia University", "4.30 / 4.30", "Concordia Merit Scholarship"],
+              name: "Graduate Studies, Quality Systems Engineering",
+              detail: ["Concordia University", "Transferred to PhD before degree completion", "4.30 / 4.30", "Concordia Merit Scholarship"],
               time: "2023&ndash;2024"
             },
             {
@@ -121,33 +127,34 @@ const en: CVDocument = {
           title: "Research Projects",
           items: [
             {
-              name: "Aviation Safety Project",
-              tag: "Industry collaboration &middot; Collins Aerospace",
+              name: "Telotia",
+              tag: "Co-Founder &middot; Pre-Product R&amp;D",
               time: "Ongoing",
-              body: "Knowledge-to-assurance pipeline turning aviation documentation, regulations, simulator state, and incident narratives into authority-tagged artifacts, temporal monitors, falsification traces, and RL safety contracts for safety-critical flight scenarios."
+              body: "Developing claim-to-evidence validation for regulated quality work. The system decomposes reports into reviewable claims, returns support, contradiction, or absence with source-preserved receipts, and flags uncertainty for expert review; current demonstrations support product discovery, not public performance claims or replacement of domain sign-off."
             },
             {
-              name: "Psi",
-              tag: "Exploratory Clustering &middot; with Prof. Yong Zeng",
-              time: "Active",
-              body: "Developing proximity-based structure discovery without a preset number of groups. Manuscript in preparation."
+              name: "Principia",
+              tag: "Chambered Reasoning Infrastructure",
+              time: "2026",
+              body: "Built an executable backbone for chambered, traceable reasoning: typed contexts and roles, adversarial debate, experiment receipts, governed synthesis, and explicit closure conditions. A Rust kernel, embedded state, schemas, and conformance tooling keep generated reasoning distinct from authoritative state."
             },
             {
-              name: "Proximity Atlas",
-              tag: "Proximity Evidence",
-              time: "Active",
-              body: "Developing an atlas of proximity evidence rather than one accepted clustering; non-decision remains allowed. Manuscript in preparation."
+              name: "Noesis",
+              tag: "Knowledge-Grounded Flight Autonomy",
+              time: "Active research",
+              body: "Built a public-knowledge-to-autonomy research stack connecting page-cited POH/FAA constraints and simulator affordances to formal monitors, scripted controllers, learned residuals, and cross-FDM evaluation. Negative transfer tests determine where learning earns a role; all current evidence is simulator research, not certification or operational flight material."
             },
             {
-              name: "OECD PISA 2025 Creative Thinking",
-              tag: "UBC Collaboration",
+              name: "PISA Creative LLM",
+              tag: "LLM &amp; Human-Judgment Evaluation",
               time: "Jan 2025&ndash;Present",
-              body: "Co-lead researcher for PISA Canada English group (10+ researchers, UBC collaboration), studying creative thinking across cultures. Built &ldquo;PRISM,&rdquo; a cross-platform assessment system implementing three theoretical frameworks for standardized international evaluation."
+              body: "Implemented a CLI-first framework for evaluating LLM judgments on PISA 2022 creative-thinking responses across pairwise, holistic, and criteria-based methods. The design separates append-only comparison collection from ranking and supports comparison against trained human ratings across 16 country-language groups and seven items."
             },
             {
-              name: "LLM for Assessing Creativity",
-              time: "Ongoing",
-              body: "Leading research on using LLMs to automate and scale creativity assessment &mdash; whether language models can replicate expert-level scoring of divergent-thinking tasks across languages and cultures, with calibrated evaluation."
+              name: "SDPS Society &amp; Conference Platform",
+              tag: "IT Director &middot; Production Engineering",
+              time: "2025&ndash;Present",
+              body: "Built and operate the Society and SDPS 2026 platform across submissions, peer review, workshop portals, registration, payments, receipts, administration, people and heritage content, and recovered publication archives using Astro, Bun, and Cloudflare Workers/D1/R2."
             },
             {
               name: "AI-Enabled Cancer Prevention App",
@@ -159,7 +166,7 @@ const en: CVDocument = {
         },
         {
           type: "publications",
-          title: "Publications",
+          title: "Research Output",
           compact: true,
           items: [
             {
@@ -172,9 +179,9 @@ const en: CVDocument = {
           type: "focus",
           title: "Research Focus",
           items: [
-            { name: "Trustworthy agents",        desc: "Governed, audited multi-agent LLM systems and orchestration." },
-            { name: "Evidence &amp; assurance",  desc: "Source-grounded artifacts, monitors, and verifiable closure." },
-            { name: "Human &amp; model evaluation", desc: "Cross-cultural creativity assessment and interpretable AI evaluation." }
+            { name: "Epistemic accumulation", desc: "Turning fallible contributions into revisable, evidence-bound organizational knowledge." },
+            { name: "Measurement under fallibility", desc: "Separating what the data support from what a model or evaluator merely reports." },
+            { name: "Verifier-grounded systems", desc: "Matched experiments, formal checks, complete trajectories, and bounded conclusions." }
           ]
         }
       ]

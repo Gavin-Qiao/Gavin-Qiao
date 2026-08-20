@@ -34,7 +34,7 @@
 
 **Systèmes multi-agents fiables et gouvernés**
 
-Candidat au doctorat · Génie de l'information et des systèmes · Université Concordia  
+Doctorant · Génie de l'information et des systèmes · Université Concordia<br>
 Fondateur, [Telotia](https://telotia.com) · Montréal · bilingue EN / FR
 
 [![Site](https://img.shields.io/badge/telotia.com-000000?style=flat-square&logo=safari&logoColor=white)](https://telotia.com)
@@ -79,23 +79,26 @@ Je conçois des **systèmes multi-agents LLM gouvernés** : orchestration, éval
 | **Preuve et assurance** | Reçus à source préservée, moniteurs et échelles de claims qui tiennent sous examen |
 | **Évaluation humaine et modèle** | Évaluation de la créativité interculturelle, notation calibrée, évaluation interprétable |
 
-Actuellement : doctorat à Concordia, construction de Telotia (lancement public en septembre), et livraison de SDPS comme ci-dessus.
+Actuellement : doctorat à Concordia, développement de Telotia en phase de R-D préproduit, et livraison de SDPS comme ci-dessus.
 
 ---
 
 ## Travaux sélectionnés
 
-### Telotia — fondateur · arrivée en septembre
+### Telotia — R-D préproduit
 Logiciel de **validation affirmation → preuve** : un rapport et un corpus de preuves en lesquels vous avez confiance ; décomposition en affirmations atomiques ; pour chacune, les preuves à l'appui ou en contradiction — ou l'absence de preuve — avec un reçu citable et un verdict gradué. Ce n'est pas un chatbot et ne remplace pas la signature de l'expert ; ça s'assure que rien d'important n'a filé avant qu'un examinateur sceptique voie le dossier.
 
-Premier produit : un banc de travail CAPA / enquêtes qualité pour les équipes qualité en dispositifs médicaux. Surface publique en **septembre**.  
+Hypothèse de produit principale : un banc de travail CAPA / enquêtes qualité pour les équipes qualité en dispositifs médicaux.
 → [telotia.com](https://telotia.com)
 
 ### Faits saillants de recherche
-- **Sécurité aéronautique** (collab. Collins Aerospace) — pipeline savoir → assurance : artéfacts étiquetés par autorité, moniteurs temporels, traces de falsification, contrats de sécurité RL  
+- **Probatio** — expériences appariées comparant un même LLM ouvert fixe, seul puis au sein d'une organisation de recherche de preuves, avec preuves scellées, trajectoires conservées et vérification par le noyau Lean 4
+- **Mensura** — mesure comparative attentive aux affirmations, séparant acquisition de preuves et inversion de la mesure, avec relations, ordres partiels, régions d'identification et abstention
+- **Mesure de tolérance (MoT)** — certificats simultanés d'homogénéité locale destinés à gouverner une action avec borne de perte et solution de repli explicites
 - **Psi** — découverte de structure à partir de la proximité, sans nombre de groupes fixé. Manuscrit en préparation.
 - **Proximity Atlas** — organise la preuve de proximité au lieu d'imposer une seule partition ; la non-décision reste possible. Manuscrit en préparation.
-- **OCDE PISA 2025 pensée créative** — co-responsable, groupe anglais PISA Canada (collab. UBC) ; système d'évaluation PRISM + notation LLM de la pensée divergente  
+- **Noesis** — recherche sur le passage des connaissances publiques à l'autonomie, combinant moniteurs formels, contrôle scripté et appris, et tests entre modèles de vol
+- **PISA Creative LLM** — cadre de recherche comparant les jugements des LLM et des évaluateurs humains sur les réponses de pensée créative PISA 2022 par évaluations comparative, holistique et critériée
 
 ---
 
@@ -126,8 +129,8 @@ Ce dépôt héberge aussi le **CV en code** — fichiers de contenu typés, une 
 
 | | |
 | --- | --- |
-| **Ph. D.** Génie de l'information et des systèmes | Université Concordia · 2024– · 4,30/4,30 · accéléré |
-| **M. Sc. A.** Génie des systèmes qualité | Université Concordia · 2023–2024 · bourse de mérite |
+| **Doctorant** Génie de l'information et des systèmes | Université Concordia · 2024– · 4,30/4,30 · parcours accéléré |
+| **Études supérieures** Génie des systèmes qualité | Université Concordia · 2023–2024 · transfert au doctorat avant l'obtention du diplôme · bourse de mérite |
 | **B. Sc.** Mathématiques et informatique | Université McGill · majeure conjointe · 2019–2022 |
 | **Service** | Directeur TI, Society of Design and Process Science (SDPS) — [sdpsnet.org](https://sdpsnet.org) |
 

@@ -4,6 +4,9 @@
 # Local job application materials (CVs, prep notes, outreach)
 applications/
 
+# Private, live research-state context (unpublished and potentially sensitive)
+content/project-context.md
+
 # Local backups and design scratch
 backup_*/
 mohan-cv-design_*.png
